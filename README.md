@@ -159,5 +159,20 @@ mysql> select COUNT(rating) AS 'Movies per rating', rating
 |                 3 | R      |
 +-------------------+--------+
 
+-- Make the movie list more child-friendly. Delete all entries that have a rating of R. Remember to record your queries in a README.md file
+mysql> DELETE FROM movies
+    -> WHERE rating = 'R';
+
+mysql> select * from movies;
++----+------------------+---------+-----------+------------+--------+
+| ID | Title            | Runtime | Genre     | IMDB_Score | Rating |
++----+------------------+---------+-----------+------------+--------+
+|  1 | Howard the Duck  |     110 | Sci-Fi    |        4.6 | PG     |
+|  2 | Lavalantula      |      83 | Horror    |        4.7 | TV-14  |
+|  5 | Spaceballs       |      96 | Comedy    |        7.1 | PG     |
+|  6 | Monsters Inc.    |      92 | Animation |        8.1 | G      |
+|  7 | Godzilla vs Kong |     113 | Sci-Fi    |        6.3 | PG-13  |
++----+------------------+---------+-----------+------------+--------+
+
 
 
